@@ -1,11 +1,11 @@
-# SlugAAS
+# Spicy-Scarlet-Slug
 
-Slug As a Service.
+A tiny (🌶️), selfhosted(💜) web-service to generate unique slugs (🐌).
 
-A tiny, selfhosted web-service to generate unique slugs.
+Written in *rust*, to make it easy to run and deploy. 
 
-Written in *rust*, to make it easy to run and deploy. Written as a sideproject
-to learn Axum, and to gain experience with hosting and CI for rust pipeline.
+I Wrote this as a sideproject to learn Axum, and to gain experience with
+hosting and CI for rust pipeline.
 
 ```
 GET http://0.0.0.0:3000/suggestion
