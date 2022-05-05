@@ -72,7 +72,11 @@ async fn create_registration(Form(registration): Form<Registration>) -> (StatusC
     let slug = registration.slug;
     let db = sled::open("/tmp/slugaas_db").expect("open");
 
-    let (code, body) = match db.insert(slug.to_owned(), "") {
+    if db.contains_key(&slug).unwrap_or(false) {
+        return (StatusCode::BAD_REQUEST, "".to_string())
+    }
+
+    let (code, body) = match db.insert(&slug, "") {
         Err(why) => (StatusCode::INTERNAL_SERVER_ERROR, why.to_string()),
         Ok(_) => (StatusCode::ACCEPTED, slug),
     };

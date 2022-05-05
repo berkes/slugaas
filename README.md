@@ -39,8 +39,6 @@ The last step will return an error if the slug you want to store was already reg
 This avoids human-generated slugs being reused. And it avoids race-conditions
 where between searching & registering another service registered your slug.
 
-Once registered, this slug will no longer show up in suggestions.
-
 Checking for registrations should be fast enough to be used client-side. E.g.
 a textbox that shows a validation checkmark when someone stops typing. It is 
 not a type-ahead search, as it will only return slugs with an exact match.
@@ -104,14 +102,13 @@ This builds and runs the platform locally.
 
 ### Test
 
-TODO: implement this. 
-
 After installing the dependencies, on the development machine, run
-
 
     make test
 
 This builds and runs **all** tests locally.
+
+TODO: have `make test` build, start and stop the server
 
 #### Integration tests
 

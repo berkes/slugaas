@@ -17,3 +17,13 @@ HTTP/1.1 200
 
 GET http://0.0.0.0:3000/registrations?slug=fancy-blue-monkey
 HTTP/1.1 404
+
+POST http://0.0.0.0:3000/registrations
+[FormParams]
+slug: will-exist-now
+HTTP/1.1 202
+
+POST http://0.0.0.0:3000/registrations
+[FormParams]
+slug: will-exist-now
+HTTP/1.1 400
