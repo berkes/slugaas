@@ -7,6 +7,8 @@ Written in *rust*, to make it easy to run and deploy.
 I Wrote this as a sideproject to learn Axum, and to gain experience with
 hosting and CI for rust pipeline.
 
+This is what it does:
+
 ```
 GET http://0.0.0.0:3000/suggestion
 HTTP/1.1 200
@@ -45,6 +47,20 @@ not a type-ahead search, as it will only return slugs with an exact match.
 It is not a search at all, since that would expose slugs in use.
 
 Slugs are append-only by nature. You cannot change or delete any from the registry.
+
+## WIP!
+
+Project is unfinished and unreleased. Yet.
+
+TODO:
+
+* [ ] turn these todos into issues
+* [ ] Build a CI and CD pipeline with GH actions or such
+* [ ] Deploy to an example server
+* [ ] Implement namespacing
+* [ ] Turn into ID-AS-A-SERVICE
+* [ ] ?
+* [ ] Profit?
 
 ## Security 
 
