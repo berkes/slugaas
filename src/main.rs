@@ -3,7 +3,6 @@ use axum::{
     extract::{Form, Query},
     http::StatusCode,
     routing::get,
-    routing::post,
     Router,
 };
 use serde::Deserialize;
