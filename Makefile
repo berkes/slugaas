@@ -1,9 +1,11 @@
 DIR := ${CURDIR}
 
+include .env
+
 all:
 	cargo build --release
 
 test:
-	rm -rf /tmp/slugaas_db
+	rm -rf ${SSS_DB_LOCATION}
 	cargo test --all
 	hurl --test tests/*hurl

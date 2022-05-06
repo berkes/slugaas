@@ -9,6 +9,9 @@ use serde::Deserialize;
 use sled;
 use uuid::Uuid;
 
+pub mod lib;
+use crate::lib::Config;
+
 #[tokio::main]
 async fn main() {
     // build our application with a single route
@@ -20,8 +23,7 @@ async fn main() {
             get(check_registration).post(create_registration),
         );
 
-    // run it with hyper on localhost:3000
-    axum::Server::bind(&"0.0.0.0:3000".parse().unwrap())
+    axum::Server::bind(&config().addr())
         .serve(app.into_make_service())
         .await
         .unwrap();
@@ -54,7 +56,7 @@ fn uuid_string() -> String {
 
 async fn check_registration(Query(registration): Query<Registration>) -> StatusCode {
     let slug = registration.slug;
-    let db = sled::open("/tmp/slugaas_db").expect("open");
+    let db = sled::open(&config().db_location).expect("open");
 
     match db.contains_key(slug) {
         Ok(is_contained) => {
@@ -70,10 +72,10 @@ async fn check_registration(Query(registration): Query<Registration>) -> StatusC
 
 async fn create_registration(Form(registration): Form<Registration>) -> (StatusCode, String) {
     let slug = registration.slug;
-    let db = sled::open("/tmp/slugaas_db").expect("open");
+    let db = sled::open(&config().db_location).expect("open");
 
     if db.contains_key(&slug).unwrap_or(false) {
-        return (StatusCode::BAD_REQUEST, "".to_string())
+        return (StatusCode::BAD_REQUEST, "".to_string());
     }
 
     let (code, body) = match db.insert(&slug, "") {
@@ -85,8 +87,11 @@ async fn create_registration(Form(registration): Form<Registration>) -> (StatusC
     (code, body)
 }
 
+fn config() -> Config {
+    Config::from_env()
+}
+
 #[derive(Deserialize, Debug)]
-#[allow(dead_code)]
 struct Registration {
     slug: String,
 }
