@@ -1,10 +1,13 @@
 # Spicy-Scarlet-Slug
 
+[![Build](https://github.com/berkes/spicy-scarlet-slug/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/berkes/spicy-scarlet-slug/actions/workflows/build.yml) | [DEMO](https://spicy-scarlet-slug-demo.onrender.com/)
+
 A tiny (🌶️), selfhosted(💜) web-service to generate unique slugs (🐌).
+
 
 Written in *rust*, to make it easy to run and deploy. 
 
-I Wrote this as a sideproject to learn Axum, and to gain experience with
+I wrote this as a sideproject to learn Axum, and to gain experience with
 hosting and CI for rust pipeline.
 
 This is what it does:
@@ -55,8 +58,8 @@ Project is unfinished and unreleased. Yet.
 TODO:
 
 * [ ] turn these todos into issues
-* [ ] Build a CI and CD pipeline with GH actions or such
-* [ ] Deploy to an example server
+* [X] Build a CI and CD pipeline with GH actions or such
+* [X] Deploy to an example server
 * [ ] Implement namespacing
 * [ ] Turn into ID-AS-A-SERVICE
 * [ ] ?
