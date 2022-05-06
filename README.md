@@ -15,6 +15,7 @@ This is what it does:
 ```
 GET http://0.0.0.0:3000/suggestion
 HTTP/1.1 200
+"some-random-slug"A
 
 GET http://0.0.0.0:3000/suggestion?seed=foo
 "unique-crepe-shark"
