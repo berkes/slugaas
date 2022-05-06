@@ -41,6 +41,8 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: spicy-scarlet-slug
+    - name: Make executable
+      run: chmod +x spicy-scarlet-slug
     - name: Run service
       run: ./spicy-scarlet-slug &
     - name: Install Hurl
