@@ -1,6 +1,6 @@
 # Spicy-Scarlet-Slug
 
-[![Build](https://github.com/berkes/spicy-scarlet-slug/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/berkes/spicy-scarlet-slug/actions/workflows/build.yml) | [DEMO](https://spicy-scarlet-slug-demo.onrender.com/)
+[![Build](https://github.com/berkes/spicy-scarlet-slug/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/berkes/spicy-scarlet-slug/actions/workflows/build.yml) | [DEMO](https://spicy-scarlet-slug.onrender.com/)
 
 A tiny (🌶️), selfhosted(💜) web-service to generate unique slugs (🐌).
 
